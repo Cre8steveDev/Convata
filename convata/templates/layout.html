@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="{{url_for('static', filename='favicon.png')}}" type="image/x-icon">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+	{% block css %}{% endblock css %}
+	{% block js %}{% endblock js %}
+	<title>Convata | Document Conversion Made Easy</title>
+</head>
+<body>
+	<img class="background-image" role="presentation" src="{{url_for('static', filename='images/homescreen.jpg')}}" alt="">
+	<header>
+		<div class="header-container">
+		<div class="logo-container">
+			<a href="/"><h2>Convata</h1></a>
+			<img src="{{url_for('static', filename='images/logo-icon.png')}}" alt="">
+		</div>
+
+		<nav class="navigation-container">
+			<ul class="navigation-links">
+				<a href="{{url_for('convata1.conv_pdf_docx')}}">
+					<li class="link">PDF to DOCX</li>
+				</a>
+
+				<a href="">
+					<li class="link">Merge PDF Files</li>
+				</a>
+
+				<a href="">
+					<li class="link">PDF Summarizer</li>
+				</a>
+
+				<a href="">
+					<li class="link">About Us</li>
+				</a>
+			</ul>
+		</nav>
+	</div>
+	</header>
+
+	{% block content %}{% endblock content %}
+
+	{% block features %}{% endblock features %}
+
+	<footer class="footer-container">
+		<section class="footer-top">
+			<div class="convata-details">
+				<h2 class="app-name">Convata</h2>
+				<p>Convata is a free online tool for converting PDF files to various formats and shortening URLs. Our mission is to make document conversion and sharing as easy and accessible as possible.</p>
+			</div>
+	
+			<div class="convata-links">
+				<h3>Quick Links</h3>
+				<ul>
+					<li><a href="{{url_for('convata1.conv_pdf_docx')}}">PDF to DOCX</a></li>
+					<li><a href="#">Merge PDF Files</a></li>
+					<li><a href="#">PDF Summarizer</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</div>
+	
+			<div class="contact-info">
+				<h3>Contact Info</h3>
+				<p>Created by <span>Cre8SteveDev</span></p>
+				<p>Email: <a href="mailto:cre8stevedev@gmail.com">cre8stevedev@gmail.com</a></p>
+			</div>
+		</section>
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="style.css">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/index.js")}}" defer></script>
+{% endblock js %}
+
+
+{% block content %}
+<form action="/convert/pdf-docx" method="post" enctype="multipart/form-data">
+	<label for="start">Enter Start Point: </label>
+	<input type="number" name="start" id="start" placeholder="Defaults to 0" value="0" min="0">
+
+	<label for="end">Enter the Last Page (range) to convert  </label>
+	<input type="number" name="end" id="end" placeholder="Leave this empty for full document converstion" min="1">
+	
+	<input type="file" name="upload_pdf" id="upload_pdf">
+	<button type="submit">Submit Form</button>
+
+</form>
+{% endblock content %}

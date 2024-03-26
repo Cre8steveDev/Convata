@@ -1,0 +1,169 @@
+main {
+  width: 100%;
+  max-width: 1300px;
+  margin-inline: auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .leftscreen {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+
+    .main-copy {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sub-copy {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      line-height: 1.3;
+    }
+
+    button {
+      background-color: #35374b;
+      /* width: 200px; */
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: white;
+      border: none;
+      border-radius: 1.4rem;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        opacity: 0.85;
+        cursor: pointer;
+        box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .rightscreen {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    flex: 1;
+    gap: 1rem;
+
+    .tool-container {
+      width: 40%;
+      min-height: 200px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 30px;
+      padding: 1.4rem;
+
+      box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s 0s ease-in;
+
+      &:hover {
+        transform: scale(80%);
+      }
+
+      img,
+      h2,
+      p {
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    .image-container {
+      width: 100%;
+      height: 60px;
+
+      img {
+        height: 100%;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
+
+.features-container {
+  background-color: #35374b;
+  width: 100%;
+
+  .inner-container {
+    width: 100%;
+    max-width: 1300px;
+    margin-inline: auto;
+    padding: 1.5rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 1.2rem;
+
+    text-align: center;
+    color: #c4c4c4;
+
+    .single-feature {
+      width: 100%;
+
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        margin-inline: auto;
+        margin-bottom: 0.8rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .feature-title {
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .feature-details {
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+        width: 90%;
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+/* Styles for screens greater than 600px and less than 1000px */
+@media only screen and (max-width: 1200px) {
+  main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .leftscreen {
+    padding-inline: 4rem;
+  }
+
+  .rightscreen {
+    text-align: center;
+
+    .tool-container {
+      min-width: 340px;
+    }
+  }
+}
+
+/* Styles for screens greater than 1000px */
+@media only screen and (min-width: 1202px) {
+  main {
+    flex-direction: row;
+
+    .leftscreen {
+      text-align: left;
+    }
+  }
+}
+
+/* Styles for screens less than 600px */
+@media only screen and (max-width: 599px) {
+}
