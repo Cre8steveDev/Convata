@@ -19,22 +19,19 @@ Convata is a tool built with Flask, a Python web framework. It provides a collec
 - AI-powered PDF summarization: Summarize PDFs into easily digestible chunks.
 - URL Shortener: Shorten your social media or website links for easy sharing.
 
-## Installation
-
-To use Convata, follow these steps:
-
-1. Clone the repository: `git clone https://github.com/your-username/convata.git`
-2. Install the required dependencies: `pip install -r requirements.txt`
-
 ## Usage
 
 A. Visit the Website: - Deploying Soon
 
-B: Run it on your local machine
+B: To use Convata on your local machine
 
-1. Navigate to the project directory: `cd convata`
-2. Start the Flask development server: `flask run`
-3. Open your web browser and visit `http://localhost:5000`
+## Installation
+
+1. Clone the repository: `git clone https://github.com/your-username/convata.git`
+2. Install the required dependencies: `pip install -r requirements.txt`
+3. Navigate to the project directory: `cd convata`
+4. Start the Flask development server: `flask run`
+5. Open your web browser and visit `http://localhost:5000`
 
 ## Author
 
