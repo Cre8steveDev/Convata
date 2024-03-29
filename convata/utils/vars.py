@@ -5,7 +5,7 @@ TOOLS = [
     
     {"image": "images/merge-pdf.svg", "title": "Merge PDF", "details": "Combine Multiple PDF Files into One for easy distribution", "view": "convata1.merge_pdf"},
     
-    {"image": "images/compress-pdf.png", "title": "Compress PDF", "details": "File size too big? You can use our tool to compress the file and retain quality", "view": "convata1.compress_pdf"},
+    {"image": "images/imagetopdf.png", "title": "Image to PDF", "details": "Quick and seemless conversion of image files into PDF for easy sharing!", "view": "convata1.imagepdf"},
     
     {"image": "images/shorten-url.png", "title": "Shorten Url", "details": "Make social sharing easier. Shorten your URL for easy sharing to friends and the web!", "view": "convata1.shorten_url"}
          ]

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for("static", filename="css/download.css")}}">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/download.js")}}" defer></script>
+{% endblock js %}
+
+{% block content %}
+<h2 class="page-heading">{{session.get("service_name", "")}}</h2>
+<p class="heading-subtitle">{{session.get("description", "")}}</p>
+
+<div class="download-btn-container">
+<a href="{{url_for("convata1.download_file", filename=filename)}}">
+	<input type="button" value="DOWNLOAD YOUR FILE" class="loading">
+</a>
+</div>
+{% endblock content %}

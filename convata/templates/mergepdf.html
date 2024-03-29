@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for("static", filename="css/mergepdf.css")}}">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/mergepdf.js")}}" defer></script>
+{% endblock js %}
+
+
+{% block content %}
+<h2 class="page-heading">Merge Two or Three PDF Documents into One</h2>
+<p class="heading-subtitle">(Save yourself the Stress of scanning all over again!)</p>
+
+<form action="/convert/merge-pdf" method="post" enctype="multipart/form-data">
+	
+	<div class="file-upload-outline">
+		<label for="first">First File</label>
+		<input type="file" name="first" id="first" title="Choose the first Document"  accept=".pdf" required>
+	</div>
+
+	<div class="file-upload-outline">
+		<label for="second">Second File</label>
+		<input type="file" name="second" id="second" title="Choose the second Document"  accept=".pdf" required>
+	</div>
+
+	<div class="file-upload-outline">
+		<label for="third">Third File</label>
+		<input type="file" name="third" id="third" title="Choose the third Document"  accept=".pdf" >
+	</div>
+
+	<input type="text" id="honeypot" name="honeypot"/>
+
+	
+	<p class="instruction">The Third File Field is optional. You can select only two files at a time if that is what you want.</p>
+
+	<button type="submit">Merge the PDF Files 🏂</button>
+
+</form>
+
+<hr />
+
+{% endblock content %}

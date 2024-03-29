@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for("static", filename="css/pdfcompress.css")}}">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/pdfcompress.js")}}" defer></script>
+{% endblock js %}
+
+
+{% block content %}
+<h2 class="page-heading">Got a Bloated PDF File Size? Let's Compress it!</h2>
+<p class="heading-subtitle">Need to reduce your pdf file size to meet requirements? We got you</p>
+
+<form action="/convert/image-to-pdf" method="post" enctype="multipart/form-data">
+	
+	<div class="file-upload-outline">
+		<label for="first">Choose File To Compress</label>
+		<input type="file" name="file" id="file" accept=".pdf" required>
+	</div>
+
+	<br />
+	
+	<label for="level">Enter a Desired File name for the PDF:</label>
+	<input type="text" minlength="5" maxlength="50"required>
+
+	<input type="text" id="honeypot" name="honeypot"/>
+
+	<button type="submit">Compress PDF File 🏂</button>
+
+</form>
+
+<hr />
+
+{% endblock content %}

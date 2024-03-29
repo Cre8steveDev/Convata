@@ -8,6 +8,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: Inter, sans-serif;
+  color: #35374b;
 }
 
 html {
@@ -63,7 +64,6 @@ header {
     gap: 1rem;
 
     h2 {
-      color: black;
       font-size: 2.5rem;
     }
     img {
@@ -78,6 +78,7 @@ header {
 
     .link {
       transition: all 0.2s ease-in;
+      color: black;
     }
 
     .link:hover {
@@ -99,7 +100,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: start;
     text-align: center;
+
     gap: 2rem;
   }
 
@@ -111,6 +114,7 @@ footer {
   .convata-links {
     width: 100%;
     max-width: 160px;
+    margin-top: 7px;
   }
 
   a {
@@ -124,9 +128,27 @@ footer {
   .contact-info {
     width: 100%;
     max-width: 300px;
+    margin-top: 7px;
 
     a {
       color: blue;
+    }
+  }
+}
+
+/* Styles for screens greater than 600px and less than 1000px */
+@media only screen and (max-width: 800px) {
+  .convata-details {
+    min-width: 100%;
+  }
+
+  .convata-links {
+    min-width: 100%;
+
+    ul {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
     }
   }
 }

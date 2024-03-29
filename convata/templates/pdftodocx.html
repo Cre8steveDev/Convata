@@ -2,25 +2,34 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{url_for("static", filename="css/pdftodocx.css")}}">
 {% endblock css %}
 
 
 {% block js %}
-<script src="{{url_for("static", filename="js/index.js")}}" defer></script>
+<script src="{{url_for("static", filename="js/pdftodocx.js")}}" defer></script>
 {% endblock js %}
 
 
 {% block content %}
+<h2 class="page-heading">Convert PDF Files to Docx</h2>
+<p class="heading-subtitle">(Microsoft Word Document)</p>
+
 <form action="/convert/pdf-docx" method="post" enctype="multipart/form-data">
-	<label for="start">Enter Start Point: </label>
-	<input type="number" name="start" id="start" placeholder="Defaults to 0" value="0" min="0">
+	<label for="start">Enter Start Point (0 means first page): </label>
+	<input type="number" name="start" id="start" placeholder="Starting of Page == 0" value="0" min="0" >
 
 	<label for="end">Enter the Last Page (range) to convert  </label>
 	<input type="number" name="end" id="end" placeholder="Leave this empty for full document converstion" min="1">
 	
-	<input type="file" name="upload_pdf" id="upload_pdf">
-	<button type="submit">Submit Form</button>
+	<div class="file-upload-outline">
+		<input type="file" name="upload_pdf" id="upload_pdf" accept=".pdf" required/>
+	</div>
+
+	<button type="submit">Convert PDF 🏂</button>
 
 </form>
+
+<hr />
+
 {% endblock content %}

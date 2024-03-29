@@ -1,0 +1,51 @@
+/* Styles for the Download Page that will be shared by all Tools */
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+.page-heading {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.heading-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+
+  padding-inline: 2rem;
+}
+
+/* Animate button on Download Page */
+@keyframes loading {
+  0% {
+    background-color: limegreen; /* bright green */
+  }
+  70% {
+    background-color: darkgreen; /* dark green */
+  }
+  100% {
+    background-color: limegreen; /* bright green */
+  }
+}
+
+input {
+  padding: 2rem;
+  background-color: darkgreen;
+  animation: loading 2s ease-in infinite;
+  border: 0;
+  color: white;
+  font-size: 1.3rem;
+
+  margin-bottom: 20vh;
+  border-radius: 10px;
+}
+
+.download-btn-container {
+  width: 100%;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 """Utility Functions for Converting files"""
-from flask import request, redirect
+from flask import redirect
 from werkzeug.utils import secure_filename
 from pdf2docx import Converter
 
@@ -25,16 +25,16 @@ def pdf_to_docx(request):
         
         if end:
             end = int(end)
-        
+
         # Convert the saved pdf to a docx
         docx_filename = filename.rsplit('.', 1)[0] + '.docx'
         docx_path = "/tmp/" + docx_filename
         
         conv = Converter(pdf_path)
         conv.convert(docx_path, start=start, end=end)
-        conv.close()
+        conv.close()        
         
         return docx_filename
         
     except Exception as e:
-        return redirect("/convert/pdf-docx")
+        return None

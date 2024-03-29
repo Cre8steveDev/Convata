@@ -1,0 +1,111 @@
+/* Styles for the Page Upload Form */
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+.page-heading {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.heading-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-top: 0.2rem;
+}
+
+form {
+  width: 90%;
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: #35374b;
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  label {
+    color: seashell;
+  }
+
+  input {
+    padding: 0.8rem;
+  }
+
+  .file-upload-outline {
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+
+  input[type='file'] {
+    padding: 0.6rem;
+    border-radius: 10px;
+    color: white;
+    /* opacity: 0; */
+  }
+
+  button {
+    margin: 1rem 0rem;
+    padding: 0.9rem;
+    background-color: rgb(70, 161, 70);
+    transition: all 1s ease-in;
+    color: white;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: greenyellow;
+      color: black;
+    }
+  }
+}
+
+button,
+input {
+  width: 100%;
+
+  margin: 0.5rem 0px;
+  font-size: 1rem;
+  border-radius: 0.8rem;
+  border: 0;
+  outline: 0;
+}
+
+label {
+  width: 40%;
+  min-width: 80px;
+  margin-left: 10px;
+}
+
+.file-upload-outline {
+  color: white;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#honeypot {
+  display: none;
+}
+
+/* Animate button on form submission */
+@keyframes loading {
+  0% {
+    background-color: limegreen; /* bright green */
+  }
+  50% {
+    background-color: darkgreen; /* dark green */
+  }
+  100% {
+    background-color: limegreen; /* bright green */
+  }
+}
+
+.loading {
+  animation: loading 2s ease-in infinite;
+}
