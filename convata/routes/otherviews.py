@@ -2,8 +2,7 @@
 
 import json
 from flask import Blueprint, request, render_template, redirect, url_for
-from flask import session, send_from_directory
-from ..utils.converters import pdf_to_docx
+
 from ..utils.vars import TOOLS, FEATURES
 
 
@@ -13,6 +12,7 @@ from ..utils.vars import TOOLS, FEATURES
 # The name you give the blueprint is how you will refer to the 
 # functions when you use url_for("name_of_function") instead of 
 # the route itself
+
 otherviews = Blueprint("otherviews1", __name__)
 
 
@@ -28,5 +28,6 @@ def about_us():
 @otherviews.route("/pdf_summarizer", strict_slashes=False, methods=["POST", "GET"])
 def pdf_summarizer():
     """PDF Summarizer logic"""
-    return {"name": "THE PDF SUMMARIZER PAGE"}
+    # return {"name": "THE PDF SUMMARIZER PAGE"}
+    return redirect("https://google.com")
 

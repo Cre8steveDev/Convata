@@ -5,7 +5,7 @@ from time import sleep
 from flask import Blueprint, request, render_template, redirect, url_for
 from flask import session, send_from_directory
 
-from ..utils.converters import pdf_to_docx
+from ..utils.pdftodocx import pdf_to_docx
 from ..utils.pdfmerger import handle_merge_pdf
 from ..utils.pdfcompress import handle_compress_pdf
 from ..utils.imagetopdf import handle_image_to_pdf
@@ -130,7 +130,6 @@ def imagepdf():
     session["description"] = "Thanks for using our free tool. You can download the file to your device by clicking the Download Button Below! ✅"
         
     return redirect("/download/" + document_filename)
-
 
 
 @convata_views.route("/convert/shorten-url", strict_slashes=False, methods=["POST", "GET"])

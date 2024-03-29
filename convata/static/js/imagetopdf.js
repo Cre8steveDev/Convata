@@ -5,7 +5,6 @@
 // Retrieve the button by id
 
 const submitBtn = document.querySelector('button');
-const file1 = document.querySelector('#first');
 const theForm = document.querySelector('form');
 const honeyPot = document.querySelector('#honeypot');
 
@@ -16,7 +15,7 @@ submitBtn.addEventListener('click', (e) => {
   if (honeyPot.value.length > 0) return;
 
   submitBtn.classList.toggle('loading');
-  submitBtn.textContent = 'File Compression in Progress... 😎';
+  submitBtn.textContent = 'Converting your Image to PDF... 😎';
 
   theForm.submit();
 });
