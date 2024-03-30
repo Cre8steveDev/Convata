@@ -61,7 +61,20 @@ def register():
     
     
 
-# Create Login Route 
+# Create Login Route for New Users
+@otherviews.route("/login", strict_slashes=False, methods=["POST", "GET"])
+def login():
+    """User Login Route"""
+    if request.method == "GET":
+        return render_template("login.html")
+    
+    # Retrieve User collection 
+    from ..models.user_database import user
+    
+    # Encrypt user's password before saving to database
+    user_password = request.form.get("password")
+    hashed_password = user_password + "TADA"
+    
 
 
 # Create Sign Out Route 

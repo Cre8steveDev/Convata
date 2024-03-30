@@ -57,7 +57,7 @@ button,
 input {
   width: 100%;
 
-  margin: 0.5rem 0px;
+  margin: 1rem 0px;
   font-size: 1rem;
   border-radius: 0.8rem;
   border: 0;
@@ -69,6 +69,16 @@ input {
   margin: 1rem 0px;
   color: white;
   font-style: italic;
+}
+
+.password-hint {
+  color: greenyellow;
+  cursor: pointer;
+  font-size: 0.9rem;
+
+  &:hover {
+    opacity: 60%;
+  }
 }
 
 #honeypot {

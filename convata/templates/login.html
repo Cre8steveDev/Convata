@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for("static", filename="css/login.css")}}">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/login.js")}}" defer></script>
+{% endblock js %}
+
+{% block content %}
+
+<h2 class="page-heading">Welcome Back! Login to Continue</h2>
+<p class="heading-subtitle">I could almost say we've missed you!</p>
+
+<form action="/register" method="post">
+	<input type="text" name="username" id="username" required placeholder="Enter Your Username" minlength="6">
+
+	<input type="password" name="password" id="password1" required placeholder="Enter Login Password" minlength="8" maxlength="40">
+	<p class="password-hint">Show Password</p>
+
+	<input type="text" name="honeypot" id="honeypot">
+
+	<button>Login to DashBoard 😎</button>
+
+	<p class="information">New User on the Platform? 
+		<a href="/register"><span>Register Now!</span></a>
+	</p>
+
+
+
+</form>
+
+<hr />
+{% endblock content %}
+

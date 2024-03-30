@@ -16,17 +16,23 @@
 <p class="heading-subtitle">(Welcome to the community of convenient tools to streamline your workflow and study)</p>
 
 <form action="/register" method="post">
-	<input type="text" name="username" id="username" required placeholder="Enter Your Desired Username">
+	<input type="text" name="username" id="username" required placeholder="Enter Your Desired Username" minlength="6">
 
-	<input type="email" name="email" id="email" required placeholder="Enter a Valid Email Address">
+	<input type="email" name="email" id="email" required placeholder="Enter a Valid Email Address" minlength="8">
 
-	<input type="password" name="password" id="password1" required placeholder="Choose a Secure Password" min="8" max="40">
+	<input type="password" name="password" id="password1" required placeholder="Choose a Secure Password" minlength="8" maxlength="40">
 
-	<input type="password" name="password2" id="password2" required placeholder="Re-enter Password to Confirm">
+	<input type="password" name="password2" id="password2" required placeholder="Re-enter Password to Confirm" minlength="8" maxlength="40">
 
 	<input type="text" name="honeypot" id="honeypot">
 
 	<button>Register 😎</button>
+
+	<p class="information">Already have an account? 
+		<a href="/login"><span>Login Here!</span></a>
+	</p>
+
+
 
 </form>
 
