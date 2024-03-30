@@ -12,6 +12,8 @@ from ..utils.imagetopdf import handle_image_to_pdf
 
 from ..utils.vars import TOOLS, FEATURES
 
+from os import environ
+
 
 # Create an instance of the blueprint that will be used 
 # In defining your routes 
@@ -145,7 +147,8 @@ def download_page(filename):
     """Receives the file name and creates a button with it"""
     return render_template("downloadpage.html", filename=filename)
 
+
 @convata_views.route("/file/<filename>", strict_slashes=False)
 def download_file(filename):
     """Sends the current file saved in session to the user"""
-    return send_from_directory("/tmp/", filename, as_attachment=True)
+    return send_from_directory(environ["DOWNLOADS"], filename, as_attachment=True)

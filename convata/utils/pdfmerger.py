@@ -5,6 +5,7 @@ With the files the user wants to merge
 from flask import request
 from pypdf import PdfWriter
 from datetime import datetime
+from os import environ
 
 def pdf_merger(file_array: list):
     """Merges files received from the file path"""
@@ -33,7 +34,9 @@ def handle_merge_pdf(request):
     time_string = datetime.now().strftime("%H-%M-%S-%f")
     filename = f"convata_merged-pdf_{time_string}.pdf"
     
-    merger.write("/tmp/" + filename)
+    save_path = environ["DOWNLOADS"]
+    
+    merger.write(f"{save_path}/" + filename)
     merger.close()
     
     return filename

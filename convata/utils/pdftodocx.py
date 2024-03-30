@@ -3,6 +3,8 @@ from flask import redirect
 from werkzeug.utils import secure_filename
 from pdf2docx import Converter
 
+from os import environ
+
 
 def pdf_to_docx(request):
     """Convert pdf to docx and return the file name"""
@@ -16,7 +18,7 @@ def pdf_to_docx(request):
         filename = secure_filename(file.filename)
         
         # Save the pdf to a temporary location
-        pdf_path = "/tmp/" + filename
+        pdf_path = environ["UPLOADS"] + "/" + filename
         file.save(pdf_path)
 
         # Get the start and end points from the form data
@@ -28,7 +30,7 @@ def pdf_to_docx(request):
 
         # Convert the saved pdf to a docx
         docx_filename = filename.rsplit('.', 1)[0] + '.docx'
-        docx_path = "/tmp/" + docx_filename
+        docx_path = environ["DOWNLOADS"] + "/" + docx_filename
         
         conv = Converter(pdf_path)
         conv.convert(docx_path, start=start, end=end)
