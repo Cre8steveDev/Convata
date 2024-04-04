@@ -29,3 +29,9 @@ include/
 # Miscellaneous
 *.swp
 .DS_Store
+
+# _DOWNLOADS 
+# _UPLOADS
+
+
+__pycache__

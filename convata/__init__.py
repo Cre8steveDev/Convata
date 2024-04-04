@@ -5,9 +5,14 @@ That will serve as the main entry point for the application
 from flask import Flask
 from .routes.fileconvert import convata_views
 from .routes.otherviews import otherviews
+from .routes.auth import auth
+
+from flask_login import LoginManager
+from convata.models.user_database import db, user, User
+from bson import ObjectId
+
 from dotenv import load_dotenv
 from os import environ
-
 
 load_dotenv()
 
@@ -27,5 +32,22 @@ def create_flask_app():
     # Register blueprints of your defined routes here 
     app.register_blueprint(convata_views)
     app.register_blueprint(otherviews)
+    app.register_blueprint(auth)
     
+    login = LoginManager(app)
+    login.login_view = "/login"
+
+    #setup the login user loader
+    @login.user_loader
+    def load_user(id):
+        """Confirm user exists in database then use else return None"""
+        cur_user = user.find_one({"_id": ObjectId(id)})
+        
+        if cur_user is None:
+            return None
+        
+        # Create a user instance from the retrieved user
+        return User(cur_user.get("username"), str(cur_user.get("_id")))
+
+
     return app

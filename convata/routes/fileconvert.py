@@ -139,7 +139,7 @@ def shorten_url():
     """Upload file and convert to pdf"""
     # document_filename = pdf_to_docx(request)
         
-    return {"response_code": 200, "status": "Success"}
+    return {"response_code": 200, "status": "Will Implement some other time"}
 
 
 @convata_views.route("/download/<filename>", strict_slashes=False)
