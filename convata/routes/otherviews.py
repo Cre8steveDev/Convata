@@ -3,6 +3,7 @@
 import json
 from flask import Blueprint, request, render_template, redirect
 from flask import flash, url_for
+from ..utils.summarizer import handle_summarize_pdf
 
 from flask_login import login_required
 
@@ -33,13 +34,7 @@ def pdf_summarizer():
     if request.method == "GET":
         return render_template("summarizer.html")
     
-    # Process the request to summarize pdf then send as context
-    # to the template 
-    
-    data = {
-        "status": "Success",
-        "summary": "This is a sample summary of the PDF Uploaded"
-    }
+    data: dict = handle_summarize_pdf(request)
     
     return  render_template("summarizer.html", data=data)
 

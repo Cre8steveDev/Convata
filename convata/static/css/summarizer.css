@@ -25,6 +25,7 @@ form {
   background-color: #35374b;
   padding: 1rem;
   display: flex;
+  justify-content: center;
   gap: 0.9rem;
   margin-bottom: 1.4rem;
 
@@ -75,6 +76,14 @@ input {
   justify-content: center;
 }
 
+#level {
+  border-radius: 10px;
+  padding: 1rem;
+  align-self: center;
+  font-family: 'Inter';
+  font-size: 1rem;
+}
+
 #honeypot {
   display: none;
 }
@@ -96,8 +105,15 @@ input {
   }
 
   .summary-content {
-    padding: 1rem;
+    padding: 2rem;
     width: 100%;
+    max-width: 62.5rem;
+    white-space: pre-wrap;
+    background-color: beige;
+    border-radius: 2rem;
+    box-shadow: inset 2px 2px 20px rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 2rem;
   }
 }
 
