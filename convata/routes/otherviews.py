@@ -30,6 +30,17 @@ def about_us():
 def pdf_summarizer():
     """PDF Summarizer logic"""
     # return {"name": "THE PDF SUMMARIZER PAGE"}
-    return {"message": "Hello World!!! Summarizer"}
+    if request.method == "GET":
+        return render_template("summarizer.html")
+    
+    # Process the request to summarize pdf then send as context
+    # to the template 
+    
+    data = {
+        "status": "Success",
+        "summary": "This is a sample summary of the PDF Uploaded"
+    }
+    
+    return  render_template("summarizer.html", data=data)
 
 

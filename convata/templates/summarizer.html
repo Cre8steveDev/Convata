@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for("static", filename="css/summarizer.css")}}">
+{% endblock css %}
+
+
+{% block js %}
+<script src="{{url_for("static", filename="js/summarizer.js")}}" defer></script>
+{% endblock js %}
+
+
+{% block content %}
+<h2 class="page-heading">PDF Summarizer Tool</h2>
+<p class="heading-subtitle">Best and easy way to get an overview of the core message of a book/report</p>
+
+<section class="container">
+	<!--
+	<div class="side-panel">
+		This will house previous summaries. 
+		As a list
+	</div>
+	-->
+	<div class="processing-tab">
+
+	<!--FORM TO RETRIEVE SUMMARY -->
+		<form action="/pdf_summarizer" method="post" enctype="multipart/form-data">
+			
+			<div class="file-upload-outline">
+				<input type="file" name="file" id="file" accept=".pdf" required>
+			</div>
+			<input type="text" id="honeypot" name="honeypot"/>
+			<button type="submit">Summarize PDF File 🏂</button>
+		</form>
+
+		<!--SUMMARY OF DOCUMENT HERE -->
+		<p class="summary-hint">Summary of your PDF goes here:</p>
+
+		<div class="summary-content">
+			{% if data %}
+				{{data.summary}}
+			{% endif %}
+		</div>
+	</div>
+
+</section>
+
+<hr />
+
+{% endblock content %}

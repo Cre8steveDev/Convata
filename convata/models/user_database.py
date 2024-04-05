@@ -1,7 +1,6 @@
 from os import environ
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-# from pymongo.database import Database
 
 from werkzeug.security import check_password_hash
 
@@ -10,8 +9,6 @@ from werkzeug.security import check_password_hash
 URI = environ["MONGO_URI"]
 
 client = MongoClient(f"{URI}=true&w=majority&appName=Cre8steveDatabase", server_api=ServerApi('1'))
-
-
 
 # Access a database from the client 
 db = client["Cre8steveDatabase"]

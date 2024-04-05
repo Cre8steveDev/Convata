@@ -16,6 +16,23 @@
 <p class="heading-subtitle">I could almost say we've missed you!</p>
 
 <form action="/login" method="post">
+
+	<!-- Render Error Message if any-->
+	
+	{% with messages = get_flashed_messages(with_categories=true) %}
+  		{% if messages %}
+			<ul class=flashes>
+				{% for category, message in messages %}
+					{% if loop.first %}
+						<li class="{{ category }}" style="color: white;">{{ message }}</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+  		{% endif %}
+	{% endwith %}
+
+	<!--End of rendering Error Message-->
+
 	<input type="text" name="username" id="username" required placeholder="Enter Your Username" minlength="6">
 
 	<input type="password" name="password" id="password1" required placeholder="Enter Login Password" minlength="8" maxlength="40">

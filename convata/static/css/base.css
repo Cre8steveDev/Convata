@@ -152,3 +152,25 @@ footer {
     }
   }
 }
+
+.flashes {
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.error {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.5rem;
+  color: white;
+  background-color: red;
+  border-radius: 1rem;
+}
+
+.success {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.5rem;
+  color: black;
+  background-color: greenyellow;
+}
