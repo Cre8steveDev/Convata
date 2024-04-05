@@ -35,9 +35,18 @@
 				<a href="{{url_for('otherviews1.about_us')}}">
 					<li class="link">About Us</li>
 				</a>
+
+				{% if current_user.is_authenticated %}
+				<a href="/dashboard"><li class="link">Dashboard</li></a>
+				{% endif %}
+
+				{% if current_user.is_authenticated %}
+				<a href="/logout"><li class="link">Sign Out</li></a>
+				{% endif %}
 			</ul>
 		</nav>
 	</div>
+	
 	</header>
 
 	{% block content %}{% endblock content %}
@@ -58,6 +67,7 @@
 					<li><a href="{{url_for('convata1.merge_pdf')}}">Merge PDF Files</a></li>
 					<li><a href="{{url_for('otherviews1.pdf_summarizer')}}">PDF Summarizer</a></li>
 					<li><a href="{{url_for('otherviews1.about_us')}}">About Us</a></li>
+
 				</ul>
 			</div>
 	

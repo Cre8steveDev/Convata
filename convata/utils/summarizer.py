@@ -19,7 +19,6 @@ def handle_summarize_pdf(req):
     
     file_name = secure_filename(file1.filename)
     upload_path = environ["UPLOADS"]
-    save_path = environ["DOWNLOADS"]
     
     file1.save(f"{upload_path}/{file_name}")
     
@@ -37,6 +36,8 @@ def handle_summarize_pdf(req):
         pdf_string += page.extract_text()
 
     # Send string to for AI to summarize
+    if len(pdf_string) > 5000:
+        pdf_string = pdf_string[0:5000]
     
     url = "https://api.edenai.run/v2/text/generation"
 
@@ -47,9 +48,9 @@ def handle_summarize_pdf(req):
         "temperature": 0,
         "max_tokens": 1000,
         "providers": "openai",
-        "text": f"SUMMARIZE THE FOLLOWING TEXT. Your response should be a {summary_rate}. Use the same writing tone as the writing style of the document. ENSURE THE RESPONSE IS PROPERLY FORMATTED FOR EASY OF READING \n HERE IS THE DOCUMENT TO BE SUMMARIZED: {pdf_string}"
+        "text": f"SUMMARIZE THE FOLLOWING TEXT. YOUR RESPONSE SHOULD BE A VERY {summary_rate}. Use the same writing tone as the writing style of the document. IGNORE IRRELEVANT PARTS OF THE DOCUMENT SUCH AS TABLE OF CONTENT, COPYRIGHT NOTICE. ENSURE THE RESPONSE IS PROPERLY FORMATTED FOR EASY OF READING. IMPORTANTLY!!! YOUR RESPONSE SHOULD START WITH THE SUMMARY OF THE TEXT THAT HAS BEEN PROVIDED ONLY. HERE IS THE TEXT TO BE SUMMARIZED: {pdf_string}"
     }
-    
+
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
@@ -59,9 +60,8 @@ def handle_summarize_pdf(req):
     try:
         response = requests.post(url, json=payload, headers=headers)
         result = json.loads(response.text)
-
-        # pdf_summary = result['microsoft']['result']
-        print(result)
+        
+        pdf_summary = result["openai"]["generated_text"]
 
     except Exception as e:
         print(e)

@@ -6,13 +6,14 @@
 
 const submitBtn = document.querySelector('button');
 const fileInput = document.querySelector('#upload_pdf');
+const theForm = document.querySelector('form');
 
 // Add event listener
 submitBtn.addEventListener('click', (e) => {
-  if (fileInput.files.length === 0) return;
-
-  console.log(fileInput.files);
+  e.preventDefault();
 
   submitBtn.classList.toggle('loading');
-  submitBtn.textContent = 'File Conversion in Progress... 😎';
+  submitBtn.textContent = 'Summarizing Document... 😎';
+
+  theForm.submit();
 });
