@@ -108,3 +108,11 @@ def login():
 def logout():
     logout_user()
     return redirect("/")
+
+# Dashboard route
+@auth.route("/dashboard", strict_slashes=False)
+@login_required
+def dashboard():
+    return """<h1>TODO: Implement the Dashboard view to display User's summary history</h1>
+<p><a href='/'>Go back Home</a></p>
+"""
