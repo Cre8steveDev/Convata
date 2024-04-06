@@ -46,6 +46,7 @@ body {
 header {
   width: 100%;
   overflow: hidden;
+  position: relative;
 
   .header-container {
     width: 100%;
@@ -70,6 +71,10 @@ header {
       width: 60px;
       height: 60px;
     }
+  }
+
+  .hamburger {
+    display: none;
   }
 
   .navigation-links {
@@ -153,6 +158,31 @@ footer {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .convata-links {
+    ul {
+      display: block;
+      gap: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 965px) {
+  .navigation-container {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
 .flashes {
   width: 100%;
   padding: 0.7rem;
@@ -173,4 +203,38 @@ footer {
   padding: 0.5rem;
   color: black;
   background-color: greenyellow;
+}
+
+.mobile-navigation-container {
+  width: 80%;
+  height: 100vh;
+
+  max-width: 400px;
+  background-color: rgba(53, 55, 75, 0.85);
+  backdrop-filter: blur(10px);
+  font-family: 'Inter' !important;
+
+  position: absolute;
+  top: 0px;
+  left: -120%;
+  z-index: 5;
+  transition: left 0.5s ease-in-out;
+
+  padding: 2rem;
+
+  li {
+    color: white !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+
+    transition: all 1s ease-in;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.mobile-navigation-container.open {
+  left: 0;
 }

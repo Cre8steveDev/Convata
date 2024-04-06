@@ -166,6 +166,33 @@ main {
   }
 }
 
+/* Styles for screens less than 758px */
+@media only screen and (max-width: 758px) {
+  main {
+    .main-copy {
+      font-size: 2rem !important;
+    }
+
+    .sub-copy {
+      font-size: 0.9rem !important;
+    }
+
+    .leftscreen {
+      padding: 1rem !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .inner-container {
+    flex-wrap: wrap;
+  }
+
+  .single-feature {
+    min-width: 250px;
+  }
+}
+
 /* Styles for screens less than 600px */
 @media only screen and (max-width: 599px) {
 }
