@@ -207,7 +207,9 @@ footer {
 
 .mobile-navigation-container {
   width: 80%;
-  height: 100vh;
+  height: 100%;
+
+  background-attachment: fixed;
 
   max-width: 400px;
   background-color: rgba(53, 55, 75, 0.85);
