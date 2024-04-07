@@ -239,4 +239,7 @@ footer {
 
 .mobile-navigation-container.open {
   left: 0;
+  position: fixed;
+  top: 0;
+  min-height: 100%;
 }
