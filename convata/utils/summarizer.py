@@ -9,6 +9,7 @@ from datetime import datetime
 from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
 from os import environ
+from uuid import uuid4
 
 
 def handle_summarize_pdf(req):
@@ -18,6 +19,10 @@ def handle_summarize_pdf(req):
     summary_rate = req.form.get("level", "Short Summary")
     
     file_name = secure_filename(file1.filename)
+    
+    if len(file_name) < 2:
+        file_name = "filename" + str(uuid4())
+        
     upload_path = environ["UPLOADS"]
     
     file1.save(f"{upload_path}/{file_name}")
