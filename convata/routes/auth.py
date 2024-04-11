@@ -4,7 +4,6 @@ from flask import request, render_template, url_for
 from flask import flash, redirect, Blueprint
 from flask_login import login_required, logout_user, current_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
-#from models.user_database import User
 from ..models.user_database import User
 from datetime import datetime
 

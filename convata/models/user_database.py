@@ -21,8 +21,6 @@ user = db["Users"] # type: ignore
 
 
 # Define Class to use to map Mongodb Data for user login
-
-
 class User:
     """Class Definition to handle Flask login for user"""
     def __init__(self, username, id):
