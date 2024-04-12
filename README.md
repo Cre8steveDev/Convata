@@ -21,7 +21,7 @@ Convata is a tool built with Flask, a Python web framework. It provides a collec
 
 ## Usage
 
-A. Visit the Website: - Deploying Soon
+A. Visit the Website: - https://convata.onrender.com/
 
 B: To use Convata on your local machine
 
