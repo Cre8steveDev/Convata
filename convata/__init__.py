@@ -13,6 +13,7 @@ from bson import ObjectId
 
 from dotenv import load_dotenv
 from os import environ
+import os
 
 load_dotenv()
 
@@ -24,6 +25,7 @@ def create_flask_app():
     
     # Secret key for session object
     app.secret_key = environ["APP_SECRET"]
+    app.config['MONGO_URI'] = os.getenv('MONGO_URI')
     
     # Store Folder path for download and uploads
     environ["DOWNLOADS"] = app.root_path + "/_DOWNLOADS"

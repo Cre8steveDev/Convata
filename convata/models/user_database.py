@@ -5,10 +5,10 @@ from pymongo.server_api import ServerApi
 from werkzeug.security import check_password_hash
 
 
-# Create a new client and connect to the server
-URI = environ["MONGO_URI"]
 
-client = MongoClient(f"{URI}=true&w=majority&appName=Cre8steveDatabase", server_api=ServerApi('1'))
+# Create a new client and connect to the server
+
+client = MongoClient(server_api=ServerApi('1'))
 
 # Access a database from the client 
 db = client["Cre8steveDatabase"]
